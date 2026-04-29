@@ -9,9 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@material-symbols-svg/react": "^0.5.0",
+    "axios": "^1.15.2",
+    "bcryptjs": "^3.0.3",
+    "lucide-react": "^1.14.0",
+    "mongoose": "^9.5.0",
     "next": "16.2.4",
+    "next-auth": "^4.24.14",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "server-only": "^0.0.1",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
