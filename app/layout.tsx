@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
+import BottomNav from './components/BottomNav'
 import localFont from 'next/font/local'
 
-const roboto = localFont({
-  src: '../public/fonts/Roboto-Regular.ttf',
+const poppins = localFont({
+  src: './fonts/Poppins-Regular.ttf', // Path must be relative to this layout.jsx file
   display:'swap',
-  variable: '--font-roboto'
+  variable: '--font-poppins'
 })
 
 const geistSans = Geist({
@@ -19,7 +19,7 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});2
+}); // Fixed: Removed the stray '2' here
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,15 +34,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={` ${roboto.className} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full overflow-hidden h-screen flex ">
-        <Sidebar />
-        <div className="w-full relative px-5">
+      {/* Added 'font-roboto' to the body class below */}
+      <body className="relative font-roboto px-4 max-sm:px-2 min-h-full overflow-hidden h-screen">
           <Navbar/>
           {children}
-        </div>
-        </body>
+          <BottomNav/>
+      </body>
     </html>
   );
 }

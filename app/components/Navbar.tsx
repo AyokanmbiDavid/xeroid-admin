@@ -1,32 +1,36 @@
 "use client"
 
-import React from 'react'
-import {Bell,User2,Rocket} from 'lucide-react'
+import React,{useState} from 'react'
+import {Bell,User2,Rocket,Command,Moon,Hand} from 'lucide-react'
 
 const Navbar = () => {
+ 
   return (
     <>
-        <div className="w-full sticky top-0 left-5 flex py-4 justify-between items-center">
-            <div className="w-full p-3 px-4 bg-gray-100 rounded-xl flex justify-between items-center">
-              <h1 className="text-md font-bold flex items-center gap-3 p-3 bg-black text-white rounded-full">
-                <span className="max-sm:hidden">
-                  Xeroid 
-                </span>
-                <Rocket size={17} />
-              </h1>
+       <div className="sticky top-0 w-full p-4 max-md:px-2 flex justify-between items-center">
+          <div className="flex items-center">
+            <span className="p-2 rounded-2xl text-white bg-[#005fa3]">
+              <Command />
+            </span>
 
-            <div className="flex items-center gap-3 ">
-              <Bell size={15}/>
-              <span className="p-2 rounded-full bg-black text-white">
-                <User2 size={15}/>
-              </span>
-                
-              <span className="font-semibold p-2 text-sm rounded-full bg-gray-200">
-                John Doe
-              </span>
-            </div>
-            </div>
-        </div>
+            <span className='ml-4 font-bold'>
+              Xeroid Admin
+            </span>
+          </div>
+
+          {/* left side */}
+          <div className="flex items-center">
+            <button className="p-2 rounded-full bg-gray-100 text-[#005fa3] cursor-pointer duration-200">
+              <Moon />
+            </button>
+
+            <a href=""
+            className='bg-[#005fa3] p-3 text-xs shrink-0 text-white font-bold flex items-center gap-3 ml-5 rounded-full'>
+              <Hand size={16}/>
+              Let work
+            </a>
+          </div>
+       </div>
     </>
   )
 }
