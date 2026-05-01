@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isDark,setIsDark] = useState<String | boolean>(false)
 
   useEffect(() => {
-    setIsDark(JSON.parse(localStorage.getItem('theme')) || 'light');
+    setIsDark(localStorage.getItem('theme') || 'light');
   }, [])
 
  const toggleTheme = () => {
