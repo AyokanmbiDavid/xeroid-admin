@@ -7,7 +7,7 @@ const Navbar = () => {
  
   return (
     <>
-       <div className="sticky top-0 w-full p-4 max-md:px-2 bg-white flex justify-between items-center">
+       <div className="sticky top-0 w-full z-20 p-4 max-md:px-2 bg-white flex justify-between items-center">
           <div className="flex items-center">
             <span className="p-2 rounded-2xl text-white bg-[#005fa3]">
               <Command />

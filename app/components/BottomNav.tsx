@@ -18,7 +18,7 @@ const BottomNav = () => {
             <div className="p-2 bg-transparent backdrop-blur-sm border flex justify-around items-center border-gray-100 rounded-full">
                 {navs.map((item,e) => (
                     <Link href={item.path}
-                    className={`flex gap-3 items-center rounded-full  text-sm font-bold p-2 ${item.path == pathname ? 'bg-[#005fa3] text-white' : 'hover:bg-gray-100/70 text-[#005fa3]'}`}>
+                    className={`flex gap-3 items-center rounded-full  text-xs font-bold p-2 ${item.path == pathname ? 'bg-[#005fa3] text-white' : 'hover:bg-gray-100/70 text-[#005fa3]'}`}>
                         <span className="max-sm:hidden">
                             {item.name}
                         </span>
