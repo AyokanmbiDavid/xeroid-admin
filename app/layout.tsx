@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from './components/Navbar'
 import BottomNav from './components/BottomNav'
 import localFont from 'next/font/local'
+import Script from 'next/script'
 
 const poppins = localFont({
   src: './fonts/Poppins-Regular.ttf', // Path must be relative to this layout.jsx file
@@ -37,9 +38,8 @@ export default function RootLayout({
       className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       {/* Added 'font-roboto' to the body class below */}
-      <body className="relative font-roboto px-4 max-sm:px-2 overflow-y-auto ">
+      <body className="relative font-roboto px-4 bg-white dark:bg-zinc-900 max-sm:px-2 overflow-y-auto ">
           <Navbar/>
-
               {children}
           <BottomNav/>
       </body>

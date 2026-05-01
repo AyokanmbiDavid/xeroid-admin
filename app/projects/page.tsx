@@ -31,9 +31,9 @@ const projects = () => {
         <Wrench size={15} /> PROJECTS
       </h1>
 
-      <div className="mt-5 grid sm:grid-cols-3 grids-col-1 gap-3 max-md:gap-0">
+      <div className="mt-5 grid sm:grid-cols-3 grids-col-1 gap-3 max-md:gap-4">
         {project.map((item, e) => (
-          <div className="w-full relative p-2 border rounded-3xl border-gray-200">
+          <div className="w-full relative p-2 border dark:border-gray-600 rounded-3xl dark:bg-gray-800  border-gray-200">
             <img
               src={item.img}
               alt={item.name}
@@ -49,14 +49,14 @@ const projects = () => {
               </span>
             </div>
             {/* copyright */}
-            <h1 className="text-xs my-3 font-semibold text-gray-600">
+            <h1 className="text-xs my-3 font-semibold dark:text-white text-gray-600">
               copyright issued, do not copy website 
             </h1>
             {/* visit */}
             <div className="flex w-full justify-end mt-5">
               <a
                 href={item.link}
-                className="flex items-center gap-3 p-2 rounded-full bg-[#005fa3] text-white text-sm font-semibold"
+                className="flex items-center gap-3 p-2 rounded-full bg-yellow-600 text-white text-sm font-semibold"
               >
                 visit
                 <span className="rotate-[320deg]">

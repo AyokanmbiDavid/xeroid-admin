@@ -20,22 +20,22 @@ const contact = () => {
     const url = `https://mail.google.com/mail/?view=cm&fs=1&body=${encodeURIComponent(message)}`
     window.open(url,'_blank')
   }
-  function sendMessage (messtype) {
+  function sendMessage (messtype: string) {
     if (messtype == 'whatsapp') sendWhatsapp();
     if (messtype == 'gmail') sendGmail()
   }
 
   return (
     <div className="w-full h-screen p-3 px-7">
-      <h1 className="font-bold text-sm text-gray-700 flex items-center gap-3">
+      <h1 className="font-bold text-sm text-gray-700 dark:text-gray-200 flex items-center gap-3">
         <Phone size={15} />
         CONTACT US
       </h1>
 
-        <div className="mt-5 text-xs font-bold">
+        <div className="mt-5 text-xs font-bold dark:text-gray-400">
             You want to join the team, or have any enquiries
         </div>
-      <div className="w-full mt-5 rounded-3xl bg-[#005fa3] p-2">
+      <div className="w-full mt-5 rounded-3xl bg-[#005fa3] dark:bg-[#013d68] p-2">
         <textarea
         onChange={(e) => setmessage(e.target.value)}
           className="bg-gray-50 rounded-2xl w-full min-h-30 p-3 text-xs"

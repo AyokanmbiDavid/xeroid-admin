@@ -1,31 +1,49 @@
 "use client"
 
-import React,{useState} from 'react'
-import {Bell,User2,Rocket,Command,Moon,Hand} from 'lucide-react'
+import React,{useState,useEffect} from 'react'
+import {Bell,User2,Rocket,Command,Moon,Hand,Sun} from 'lucide-react'
 
 const Navbar = () => {
- 
+  const [isDark,setIsDark] = useState<String | boolean>(false)
+
+  useEffect(() => {
+    setIsDark(JSON.parse(localStorage.getItem('theme')) || 'light');
+  }, [])
+
+ const toggleTheme = () => {
+  if (isDark == 'light') {
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('theme',JSON.stringify('dark'));
+    setIsDark('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+    localStorage.setItem('theme',JSON.stringify('light'))
+    setIsDark('light')
+  }
+ }
   return (
     <>
-       <div className="sticky top-0 w-full z-20 p-4 max-md:px-2 bg-white flex justify-between items-center">
+       <div className="sticky top-0 w-full z-20 p-4 max-md:px-2 bg-white dark:bg-gray-900 flex justify-between items-center">
           <div className="flex items-center">
             <span className="p-2 rounded-2xl text-white bg-[#005fa3]">
               <Command />
             </span>
 
-            <span className='ml-4 font-bold'>
+            <span className='ml-4 font-bold dark:text-gray-200'>
               Xeroid Admin
             </span>
           </div>
 
           {/* left side */}
           <div className="flex items-center">
-            <button className="p-2 rounded-full bg-gray-100 text-[#005fa3] cursor-pointer duration-200">
-              <Moon />
+            <button 
+            onClick={() => toggleTheme()}
+            className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-[#005fa3] dark:text-white cursor-pointer duration-200">
+              {isDark == 'dark' ? <Moon /> : <Sun/>}
             </button>
 
             <a href="mail:davidayokanmbi47@gmail.com"
-            className='bg-[#005fa3] p-3 text-xs shrink-0 text-white font-bold flex items-center gap-3 ml-5 rounded-full'>
+            className='bg-[#1E8E3E] p-3 text-xs shrink-0 text-white font-bold flex items-center gap-3 ml-5 rounded-full'>
               <Hand size={16}/>
               Let work
             </a>
