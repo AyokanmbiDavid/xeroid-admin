@@ -37,9 +37,10 @@ export default function RootLayout({
       className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       {/* Added 'font-roboto' to the body class below */}
-      <body className="relative font-roboto px-4 max-sm:px-2 min-h-full overflow-hidden h-screen">
+      <body className="relative font-roboto px-4 max-sm:px-2 overflow-y-auto h-screen">
           <Navbar/>
-          {children}
+
+              {children}
           <BottomNav/>
       </body>
     </html>

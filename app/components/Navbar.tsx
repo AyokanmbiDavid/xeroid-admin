@@ -7,7 +7,7 @@ const Navbar = () => {
  
   return (
     <>
-       <div className="sticky top-0 w-full p-4 max-md:px-2 flex justify-between items-center">
+       <div className="sticky top-0 w-full p-4 max-md:px-2 bg-white flex justify-between items-center">
           <div className="flex items-center">
             <span className="p-2 rounded-2xl text-white bg-[#005fa3]">
               <Command />
@@ -24,7 +24,7 @@ const Navbar = () => {
               <Moon />
             </button>
 
-            <a href=""
+            <a href="mail:davidayokanmbi47@gmail.com"
             className='bg-[#005fa3] p-3 text-xs shrink-0 text-white font-bold flex items-center gap-3 ml-5 rounded-full'>
               <Hand size={16}/>
               Let work
