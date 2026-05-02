@@ -48,7 +48,7 @@ const Navbar = () => {
               {isDark == 'light' ? <Moon /> : <Sun/>}
             </button>
 
-            <a href="mail:davidayokanmbi47@gmail.com"
+            <a href="mailto:davidayokanmbi47@gmail.com?subject=Hello&body=Hi there, I want to work with you."
             className='bg-[#1E8E3E] p-3 text-xs shrink-0 text-white font-bold flex items-center gap-3 ml-5 rounded-full'>
               <Hand size={16}/>
               Let's work
