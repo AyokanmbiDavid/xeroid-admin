@@ -16,7 +16,7 @@ const BottomNav = () => {
 
     return(
         <div className="sticky bottom-0 right-0 flex justify-end items-center p-4">
-            <div className="p-2 bg-transparent backdrop-blur-sm border flex justify-around items-center border-gray-100 dark:border-gray-700/70 rounded-full">
+            <div className="p-2 bg-transparent backdrop-blur-sm border flex justify-around items-center border-gray-300 dark:border-gray-600/70 rounded-full">
                 {navs.map((item,e) => (
                     <Link href={item.path}
                     className={`flex relative gap-3 p-2 items-center`}>
@@ -30,8 +30,8 @@ const BottomNav = () => {
                             </>
                         )}
                         
-                            <span className={`font-bold text-xs text-[#005fa3] ${pathname == item.path && 'text-white'}`}>{item.name}</span>
-                            <span className={`font-bold text-[#005fa3] ${pathname == item.path && 'text-white'}`}>{item.icon}</span>
+                            <span className={`font-bold text-xs text-[#005fa3] max-md:hidden ${pathname == item.path ? 'text-white' : 'dark:text-[#0e9bff]'}`}>{item.name}</span>
+                            <span className={`font-bold text-[#005fa3] ${pathname == item.path  ? 'text-white' : 'dark:text-[#0e9bff]'}`}>{item.icon}</span>
                     </Link>
                 ))}
             </div>

@@ -4,10 +4,16 @@ import React,{useState,useEffect} from 'react'
 import {Bell,User2,Rocket,Command,Moon,Hand,Sun} from 'lucide-react'
 
 const Navbar = () => {
-  const [isDark,setIsDark] = useState<String | boolean>(false)
+  const [isDark,setIsDark] = useState<String>()
 
   useEffect(() => {
-    setIsDark(localStorage.getItem('theme') || 'light');
+    let isTheme = localStorage.getItem('theme')
+    if (isTheme) {
+      setIsDark(JSON.parse(isTheme));
+    } else {
+      setIsDark('light')
+    }
+    
   }, [])
 
  const toggleTheme = () => {
@@ -39,13 +45,13 @@ const Navbar = () => {
             <button 
             onClick={() => toggleTheme()}
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-[#005fa3] dark:text-white cursor-pointer duration-200">
-              {isDark == 'dark' ? <Moon /> : <Sun/>}
+              {isDark == 'light' ? <Moon /> : <Sun/>}
             </button>
 
             <a href="mail:davidayokanmbi47@gmail.com"
             className='bg-[#1E8E3E] p-3 text-xs shrink-0 text-white font-bold flex items-center gap-3 ml-5 rounded-full'>
               <Hand size={16}/>
-              Let work
+              Let's work
             </a>
           </div>
        </div>
